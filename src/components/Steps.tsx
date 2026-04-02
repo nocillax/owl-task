@@ -1,21 +1,21 @@
-import React from 'react';
+import React from "react";
 
 const STEPS = [
   {
     num: "01",
     text: "Add requirements\n& sign up today",
-    img: "icon1"
+    img: "/logos/step1.png",
   },
   {
     num: "02",
     text: "Connect with your CSM &\nonboarding team",
-    img: "icon2"
+    img: "/logos/step2.png",
   },
   {
     num: "03",
     text: "Meet your STR\nAssistant next week",
-    img: "icon3"
-  }
+    img: "/logos/step3.png",
+  },
 ];
 
 export default function Steps() {
@@ -26,7 +26,12 @@ export default function Steps() {
           Getting Started is <span className="text-primary">Easy</span>
         </h2>
         <p className="text-[#3a3a3a] text-center max-w-[720px] mb-24 text-[13px] md:text-[14px] font-medium leading-[1.6]">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore<br className="hidden md:block"/> magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo<br className="hidden md:block"/> consequat.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore
+          <br className="hidden md:block" /> magna aliqua. Ut enim ad minim
+          veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+          ea commodo
+          <br className="hidden md:block" /> consequat.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-16 sm:gap-8 md:gap-14 w-full px-4">
@@ -40,10 +45,14 @@ export default function Steps() {
                 </div>
                 {/* Icon Placeholder */}
                 <div className="w-[80px] h-[80px]">
-                  <img src={`https://placehold.co/100x100/transparent/333333?text=Icon+${step.num}`} alt={`Step ${step.num} Icon`} className="w-full h-full object-contain opacity-80" />
+                  <img
+                    src={step.img}
+                    alt={`Step ${step.num} Icon`}
+                    className="w-full h-full object-contain opacity-80"
+                  />
                 </div>
               </div>
-              
+
               <h3 className="text-[15px] font-bold text-center text-[#1f1f1f] leading-[1.4] whitespace-pre-line tracking-tight">
                 {step.text}
               </h3>

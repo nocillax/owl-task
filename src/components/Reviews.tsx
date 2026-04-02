@@ -6,28 +6,32 @@ import { ReviewCard, Review } from "./ui/ReviewCard";
 const REVIEWS: Review[] = [
   {
     name: "Jenny Wilson",
+    imageSrc: "/logos/jenny.png",
     imageAlt: "User",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     stars: 4,
   },
   {
     name: "Esther Howard",
+    imageSrc: "/logos/esther.png",
     imageAlt: "User",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     stars: 5,
   },
   {
     name: "Robert Fox",
+    imageSrc: "/logos/robert.png",
     imageAlt: "User",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     stars: 4,
   },
   {
     name: "Bessie Cooper",
+    imageSrc: "/logos/jenny.png",
     imageAlt: "User",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     stars: 5,
-  }
+  },
 ];
 
 export default function Reviews() {
@@ -55,12 +59,12 @@ export default function Reviews() {
 
       // Trap the event and rotate the wheel to X plane smoothly
       e.preventDefault();
-      
-      const scrollAmount = e.deltaY > 0 ? (cardWidth + gap) : -(cardWidth + gap);
-      
+
+      const scrollAmount = e.deltaY > 0 ? cardWidth + gap : -(cardWidth + gap);
+
       el.scrollBy({
         left: scrollAmount,
-        behavior: "smooth"
+        behavior: "smooth",
       });
     };
 
@@ -75,20 +79,28 @@ export default function Reviews() {
           Check Our Clients <span className="text-primary">Review</span>
         </h2>
         <p className="text-[#3a3a3a] max-w-[850px] text-center mb-16 text-[14px] font-medium leading-[1.7]">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et<br className="hidden lg:block"/>
-          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea<br className="hidden lg:block"/>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et
+          <br className="hidden lg:block" />
+          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          exercitation ullamco laboris nisi ut aliquip ex ea
+          <br className="hidden lg:block" />
           commodo consequat.
         </p>
       </div>
 
       <div className="w-full max-w-[1200px] mx-auto relative pb-10">
         {/* Horizontal Scrolling Carousel specific CSS hidden scrollbars */}
-        <style dangerouslySetInnerHTML={{__html: `
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
           .hide-scroll::-webkit-scrollbar { display: none; }
           .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
-        `}} />
-        
-        <div 
+        `,
+          }}
+        />
+
+        <div
           ref={scrollRef}
           className="flex overflow-x-auto gap-6 px-6 snap-x snap-mandatory hide-scroll py-10 items-center"
         >

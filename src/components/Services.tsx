@@ -5,31 +5,37 @@ const SERVICES = [
   {
     title: "Manage Property Listings",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    imageSrc: "/logos/listings.png",
     imageAlt: "Listings",
   },
   {
     title: "Manage Customer Bookings",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    imageSrc: "/logos/bookings.png",
     imageAlt: "Bookings",
   },
   {
     title: "Schedule House Cleaning",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    imageSrc: "/logos/cleaning.png",
     imageAlt: "Cleaning",
   },
   {
     title: "Monitor Guest Reviews",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    imageSrc: "/logos/reviews.png",
     imageAlt: "Reviews",
   },
   {
     title: "Track & Report Expenses",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    imageSrc: "/logos/expenses.png",
     imageAlt: "Expenses",
   },
   {
     title: "Guest Inquiry & Support",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    imageSrc: "/logos/support.png",
     imageAlt: "Support",
   },
 ];
@@ -42,16 +48,22 @@ export default function Services() {
           Our <span className="text-primary">Service</span>
         </h2>
         <p className="text-[#3a3a3a] max-w-[820px] text-center mb-16 text-[15px] font-medium leading-[1.6]">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore<br className="hidden md:block"/> magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo<br className="hidden md:block"/> consequat.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore
+          <br className="hidden md:block" /> magna aliqua. Ut enim ad minim
+          veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+          ea commodo
+          <br className="hidden md:block" /> consequat.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 w-full">
           {SERVICES.map((service, idx) => (
-            <ServiceCard 
-              key={idx} 
-              title={service.title} 
-              desc={service.desc} 
-              imageAlt={service.imageAlt} 
+            <ServiceCard
+              key={idx}
+              title={service.title}
+              desc={service.desc}
+              imageSrc={service.imageSrc}
+              imageAlt={service.imageAlt}
             />
           ))}
         </div>

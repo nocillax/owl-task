@@ -8,16 +8,16 @@ const NAV_LINKS = [
   { label: "Services", href: "#services" },
   { label: "Pricing", href: "#pricing" },
   { label: "Blog", href: "#tools" },
-  { label: "Resources", href: "#faq" }
+  { label: "Resources", href: "#faq" },
 ];
 const TRUSTED_LOGOS = [
-  "Airbnb",
-  "Booking",
-  "Vrbo",
-  "Tripadvisor",
-  "Agoda",
-  "Expedia",
-  "Home To Go",
+  { name: "Airbnb", src: "/logos/airbnb-logo2.png" },
+  { name: "Booking", src: "/logos/booking.com-logo2.png" },
+  { name: "Vrbo", src: "/logos/vrbo-logo2.png" },
+  { name: "Tripadvisor", src: "/logos/tripadvisor-logo2.png" },
+  { name: "Agoda", src: "/logos/agoda-logo2.png" },
+  { name: "Expedia", src: "/logos/expedia-logo2.png" },
+  { name: "Home To Go", src: "/logos/hometogo-logo2.png" },
 ];
 
 export default function HomeSection() {
@@ -25,7 +25,7 @@ export default function HomeSection() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = NAV_LINKS.map(link => link.href.substring(1));
+      const sections = NAV_LINKS.map((link) => link.href.substring(1));
       let current = "";
       for (const section of sections) {
         if (!section || section.includes("/")) continue;
@@ -38,7 +38,7 @@ export default function HomeSection() {
         }
       }
       if (current) {
-        const match = NAV_LINKS.find(l => l.href === `#${current}`);
+        const match = NAV_LINKS.find((l) => l.href === `#${current}`);
         if (match && match.label !== activeLink) setActiveLink(match.label);
       } else if (window.scrollY < 100) {
         setActiveLink("Home");
@@ -58,8 +58,8 @@ export default function HomeSection() {
             linear-gradient(to right, #000 1px, transparent 1px),
             linear-gradient(to bottom, #000 1px, transparent 1px)
           `,
-          backgroundSize: '95px 95px',
-          backgroundPosition: 'center top'
+          backgroundSize: "95px 95px",
+          backgroundPosition: "center top",
         }}
       />
       <div className="absolute top-[10%] left-1/2 -translate-x-1/2 z-0 pointer-events-none">
@@ -70,7 +70,11 @@ export default function HomeSection() {
       <header className="fixed top-0 left-0 w-full z-[100] bg-white border-b border-black/5 shadow-sm">
         <div className="flex items-center justify-between px-6 py-4 md:px-12 w-full max-w-[1400px] mx-auto">
           <div className="w-24 md:w-32 h-8 shrink-0">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo" className="w-full h-full object-contain" />
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+              alt="Google Logo"
+              className="w-full h-full object-contain"
+            />
           </div>
 
           <nav className="hidden lg:flex items-center gap-8 pl-10">
@@ -79,8 +83,11 @@ export default function HomeSection() {
                 key={link.label}
                 href={link.href}
                 onClick={() => setActiveLink(link.label)}
-                className={`text-[15px] font-bold transition-colors pb-1 ${activeLink === link.label ? 'text-primary border-b-[3px] border-primary' : 'text-foreground/80 hover:text-primary'
-                  }`}
+                className={`text-[15px] font-bold transition-colors pb-1 ${
+                  activeLink === link.label
+                    ? "text-primary border-b-[3px] border-primary"
+                    : "text-foreground/80 hover:text-primary"
+                }`}
               >
                 {link.label}
               </a>
@@ -98,23 +105,39 @@ export default function HomeSection() {
         {/* Floating Elements (Responsive placement & sizing) */}
         <div className="absolute inset-0 z-0 pointer-events-none w-full max-w-[1400px] mx-auto overflow-hidden hidden sm:block">
           {/* Top Left (Airbnb) */}
-          <div className="absolute top-[10%] md:top-[12%] lg:top-[18%] left-[5%] md:left-[10%] lg:left-[15%] w-16 h-16 md:w-20 md:h-20 lg:w-[6.5rem] lg:h-[6.5rem] rotate-[-20deg] shadow-lg rounded-2xl lg:rounded-3xl overflow-hidden bg-white border border-border/5">
-            <img src="https://placehold.co/150x150/d25a5a/ffffff?text=Airbnb" alt="Airbnb" className="w-full h-full object-cover" />
+          <div className="absolute top-[10%] md:top-[12%] lg:top-[18%] left-[5%] md:left-[10%] lg:left-[15%] w-16 h-16 md:w-20 md:h-20 lg:w-[6.5rem] lg:h-[6.5rem] rounded-2xl lg:rounded-3xl overflow-hidden ">
+            <img
+              src="/logos/airbnb-logo.png"
+              alt="Airbnb"
+              className="w-full h-full object-cover"
+            />
           </div>
 
           {/* Bottom Left (Vrbo) */}
-          <div className="absolute top-[60%] md:top-[65%] lg:bottom-[20%] lg:top-auto left-[10%] md:left-[15%] lg:left-[22%] w-12 h-12 md:w-14 md:h-14 lg:w-[4.5rem] lg:h-[4.5rem] rotate-[20deg] shadow-lg rounded-xl lg:rounded-2xl overflow-hidden bg-[#1E3A8A] border border-border/5">
-            <img src="https://placehold.co/100x100/1e3a8a/ffffff?text=Vrbo" alt="Vrbo" className="w-full h-full object-cover" />
+          <div className="absolute top-[60%] md:top-[65%] lg:bottom-[20%] lg:top-auto left-[10%] md:left-[15%] lg:left-[22%] w-12 h-12 md:w-14 md:h-14 lg:w-[4.5rem] lg:h-[4.5rem] rounded-xl lg:rounded-2xl overflow-hidden ">
+            <img
+              src="/logos/vrbo-logo.png"
+              alt="Vrbo"
+              className="w-full h-full object-cover"
+            />
           </div>
 
           {/* Top Right (Booking) */}
-          <div className="absolute top-[18%] md:top-[22%] lg:top-[26%] right-[5%] md:right-[15%] lg:right-[18%] w-14 h-14 md:w-20 md:h-20 lg:w-[6rem] lg:h-[6rem] rotate-[20deg] shadow-lg rounded-2xl lg:rounded-3xl overflow-hidden bg-[#003580] border border-border/5">
-            <img src="https://placehold.co/150x150/003580/ffffff?text=Booking" alt="Booking.com" className="w-full h-full object-cover" />
+          <div className="absolute top-[18%] md:top-[22%] lg:top-[26%] right-[5%] md:right-[15%] lg:right-[18%] w-14 h-14 md:w-20 md:h-20 lg:w-[6rem] lg:h-[6rem] rounded-2xl lg:rounded-3xl overflow-hidden ">
+            <img
+              src="/logos/booking.com-logo.png"
+              alt="Booking.com"
+              className="w-full h-full object-cover"
+            />
           </div>
 
           {/* Bottom Right (Tripadvisor) */}
-          <div className="absolute top-[65%] md:top-[70%] lg:bottom-[28%] lg:top-auto right-[15%] md:right-[20%] lg:right-[20%] w-14 h-14 md:w-16 md:h-16 lg:w-[5rem] lg:h-[5rem] rotate-[-22deg] shadow-lg rounded-xl lg:rounded-2xl overflow-hidden bg-[#34E0A1] border border-border/5">
-            <img src="https://placehold.co/100x100/77c18a/ffffff?text=Trip" alt="Tripadvisor" className="w-full h-full object-cover" />
+          <div className="absolute top-[65%] md:top-[70%] lg:bottom-[28%] lg:top-auto right-[15%] md:right-[20%] lg:right-[20%] w-14 h-14 md:w-16 md:h-16 lg:w-[5rem] lg:h-[5rem] rounded-xl lg:rounded-2xl overflow-hidden ">
+            <img
+              src="/logos/tripadvisor-logo.png"
+              alt="Tripadvisor"
+              className="w-full h-full object-cover"
+            />
           </div>
 
           {/* Small floating dots with responsive adjustments */}
@@ -133,8 +156,12 @@ export default function HomeSection() {
             Airbnb Assistants For <br /> Property Management
           </h1>
           <p className="text-[#3a3a3a] text-sm sm:text-[15px] max-w-[650px] mb-6 md:mb-8 font-medium leading-[1.6] px-4 md:px-0">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore<br className="hidden md:block" />
-            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut<br className="hidden md:block" />
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore
+            <br className="hidden md:block" />
+            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut
+            <br className="hidden md:block" />
             aliquip ex ea commodo consequat.
           </p>
 
@@ -142,7 +169,10 @@ export default function HomeSection() {
             <button className="flex items-center justify-center gap-2 bg-primary text-primary-foreground px-7 py-3 rounded-[4px] font-bold text-[15px] hover:opacity-90 transition-opacity shadow-sm">
               Schedule A Meeting &rarr;
             </button>
-            <a href="#pricing" className="text-[#0f0f0f] text-[15px] font-bold underline underline-offset-[5px] decoration-[2px] decoration-current hover:text-primary transition-colors">
+            <a
+              href="#pricing"
+              className="text-[#0f0f0f] text-[15px] font-bold underline underline-offset-[5px] decoration-[2px] decoration-current hover:text-primary transition-colors"
+            >
               See Pricing
             </a>
           </div>
@@ -158,9 +188,17 @@ export default function HomeSection() {
         </div>
         <div className="w-full bg-black/5 py-6 md:py-8 px-6">
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-10 lg:gap-[4.5rem] w-full max-w-7xl mx-auto">
-            {TRUSTED_LOGOS.map((name, idx) => (
-              <div key={idx} className="h-6 md:h-8 lg:h-10 shrink-0 flex items-center justify-center">
-                <img src={`https://placehold.co/180x50/transparent/333333?text=${name.replace(' ', '+')}`} alt={name} className="h-full object-contain mix-blend-multiply opacity-80 hover:opacity-100 transition-opacity cursor-pointer" />
+            {TRUSTED_LOGOS.map((logo) => (
+              <div
+                key={logo.name}
+                className="h-6 md:h-8 lg:h-10 shrink-0 flex items-center justify-center"
+              >
+                {" "}
+                <img
+                  src={logo.src}
+                  alt={logo.name}
+                  className="h-full object-contain mix-blend-multiply opacity-80 hover:opacity-100 transition-opacity cursor-pointer"
+                />{" "}
               </div>
             ))}
           </div>

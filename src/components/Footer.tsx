@@ -1,23 +1,34 @@
-import React from 'react';
-import { FaTwitter, FaFacebookF, FaInstagram, FaGithub } from 'react-icons/fa';
+import React from "react";
+import { FaTwitter, FaFacebookF, FaInstagram, FaGithub } from "react-icons/fa";
 
 export default function Footer() {
   return (
     <footer className="w-full flex flex-col bg-white">
-      
       {/* "Pre-Footer" / "Still have Questions?" Block Merged directly inline */}
       <div className="w-full flex flex-col items-center px-6 pb-24 border-b border-white">
         <div className="w-full max-w-[1000px] bg-[#F5F8FA] rounded-[2rem] p-12 md:p-14 flex flex-col items-center text-center">
           {/* Avatars */}
           <div className="flex items-center justify-center -space-x-3 mb-6">
             <div className="w-[46px] h-[46px] rounded-full border-[3px] border-[#F5F8FA] overflow-hidden z-20 shadow-sm relative">
-              <img src="https://placehold.co/100x100/e2e8f0/888888?text=1" alt="Team member" className="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-80" />
+              <img
+                src="/logos/prefooter2.png"
+                alt="Team member"
+                className="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-80"
+              />
             </div>
             <div className="w-[54px] h-[54px] rounded-full border-[3px] border-[#F5F8FA] overflow-hidden z-30 -translate-y-[6px] shadow-sm relative">
-              <img src="https://placehold.co/100x100/e2e8f0/888888?text=2" alt="Team member" className="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-80" />
+              <img
+                src="/logos/prefooter1.png"
+                alt="Team member"
+                className="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-80"
+              />
             </div>
             <div className="w-[46px] h-[46px] rounded-full border-[3px] border-[#F5F8FA] overflow-hidden z-20 shadow-sm relative">
-              <img src="https://placehold.co/100x100/e2e8f0/888888?text=3" alt="Team member" className="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-80" />
+              <img
+                src="/logos/prefooter3.png"
+                alt="Team member"
+                className="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-80"
+              />
             </div>
           </div>
 
@@ -25,7 +36,8 @@ export default function Footer() {
             Still have Questions?
           </h2>
           <p className="text-[#888888] text-[15px] font-medium mb-8">
-            Can't find the answer you're looking for? Please chat to our friendly team.
+            Can't find the answer you're looking for? Please chat to our
+            friendly team.
           </p>
           <button className="bg-primary text-white font-bold text-[14px] px-6 py-[10px] rounded-[4px] hover:opacity-90 transition-opacity">
             Get in touch
@@ -37,30 +49,47 @@ export default function Footer() {
       <div className="w-full flex-col border-t border-gray-200">
         <div className="max-w-[1100px] mx-auto w-full px-6 py-20">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1fr] gap-12 lg:gap-8">
-            
             {/* Logo & Description */}
             <div className="flex flex-col items-start pr-0 lg:pr-8">
-              <img 
-                src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" 
-                alt="Google Logo" 
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+                alt="Google Logo"
                 className="h-7 mb-8 object-contain"
               />
               <p className="text-[#6b7280] text-[13.5px] font-medium leading-[1.8] mb-8">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br />
-                Nullam dictum aliquet accumsan porta ridiculus in mattis.<br />
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                <br />
+                Nullam dictum aliquet accumsan porta ridiculus in mattis.
+                <br />
                 Netus sodales in volutpat.
               </p>
               <div className="flex items-center gap-[10px]">
-                <a href="#" aria-label="Twitter" className="w-[30px] h-[30px] rounded-full bg-[#a1a1aa] text-white flex items-center justify-center hover:bg-primary transition-colors">
+                <a
+                  href="#"
+                  aria-label="Twitter"
+                  className="w-[30px] h-[30px] rounded-full items-center justify-center"
+                >
                   <FaTwitter size={14} />
                 </a>
-                <a href="#" aria-label="Facebook" className="w-[30px] h-[30px] rounded-full bg-[#a1a1aa] text-white flex items-center justify-center hover:bg-primary transition-colors">
+                <a
+                  href="#"
+                  aria-label="Facebook"
+                  className="w-[30px] h-[30px] rounded-full items-center justify-center"
+                >
                   <FaFacebookF size={14} />
                 </a>
-                <a href="#" aria-label="Instagram" className="w-[30px] h-[30px] rounded-full bg-[#a1a1aa] text-white flex items-center justify-center hover:bg-primary transition-colors">
+                <a
+                  href="#"
+                  aria-label="Instagram"
+                  className="w-[30px] h-[30px] rounded-full items-center justify-center"
+                >
                   <FaInstagram size={14} />
                 </a>
-                <a href="#" aria-label="Github" className="w-[30px] h-[30px] rounded-full bg-[#a1a1aa] text-white flex items-center justify-center hover:bg-primary transition-colors">
+                <a
+                  href="#"
+                  aria-label="Github"
+                  className="w-[30px] h-[30px] rounded-full items-center justify-center"
+                >
                   <FaGithub size={14} />
                 </a>
               </div>
@@ -68,48 +97,132 @@ export default function Footer() {
 
             {/* Links - Company */}
             <div className="flex flex-col lg:pl-10">
-              <h4 className="text-[#1f1f1f] font-bold text-[16px] mb-8">Company</h4>
+              <h4 className="text-[#1f1f1f] font-bold text-[16px] mb-8">
+                Company
+              </h4>
               <ul className="flex flex-col gap-5">
-                <li><a href="#" className="text-[#6b7280] text-[14px] font-medium hover:text-primary transition-colors">About</a></li>
-                <li><a href="#" className="text-[#6b7280] text-[14px] font-medium hover:text-primary transition-colors">Pricing</a></li>
-                <li><a href="#" className="text-[#6b7280] text-[14px] font-medium hover:text-primary transition-colors">Jobs</a></li>
-                <li><a href="#" className="text-[#6b7280] text-[14px] font-medium hover:text-primary transition-colors">Blog</a></li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-[#6b7280] text-[14px] font-medium hover:text-primary transition-colors"
+                  >
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-[#6b7280] text-[14px] font-medium hover:text-primary transition-colors"
+                  >
+                    Pricing
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-[#6b7280] text-[14px] font-medium hover:text-primary transition-colors"
+                  >
+                    Jobs
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-[#6b7280] text-[14px] font-medium hover:text-primary transition-colors"
+                  >
+                    Blog
+                  </a>
+                </li>
               </ul>
             </div>
 
             {/* Links - Help */}
             <div className="flex flex-col">
-              <h4 className="text-[#1f1f1f] font-bold text-[16px] mb-8">Help</h4>
+              <h4 className="text-[#1f1f1f] font-bold text-[16px] mb-8">
+                Help
+              </h4>
               <ul className="flex flex-col gap-5">
-                <li><a href="#" className="text-[#6b7280] text-[14px] font-medium hover:text-primary transition-colors">Customer Support</a></li>
-                <li><a href="#" className="text-[#6b7280] text-[14px] font-medium hover:text-primary transition-colors">Delivery Details</a></li>
-                <li><a href="#" className="text-[#6b7280] text-[14px] font-medium hover:text-primary transition-colors">Terms & Conditions</a></li>
-                <li><a href="#" className="text-[#6b7280] text-[14px] font-medium hover:text-primary transition-colors">Privacy Policy</a></li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-[#6b7280] text-[14px] font-medium hover:text-primary transition-colors"
+                  >
+                    Customer Support
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-[#6b7280] text-[14px] font-medium hover:text-primary transition-colors"
+                  >
+                    Delivery Details
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-[#6b7280] text-[14px] font-medium hover:text-primary transition-colors"
+                  >
+                    Terms & Conditions
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-[#6b7280] text-[14px] font-medium hover:text-primary transition-colors"
+                  >
+                    Privacy Policy
+                  </a>
+                </li>
               </ul>
             </div>
 
             {/* Links - Resources */}
             <div className="flex flex-col">
-              <h4 className="text-[#1f1f1f] font-bold text-[16px] mb-8">Resources</h4>
+              <h4 className="text-[#1f1f1f] font-bold text-[16px] mb-8">
+                Resources
+              </h4>
               <ul className="flex flex-col gap-5">
-                <li><a href="#" className="text-[#6b7280] text-[14px] font-medium hover:text-primary transition-colors">Free eBooks</a></li>
-                <li><a href="#" className="text-[#6b7280] text-[14px] font-medium hover:text-primary transition-colors">Development Tutorial</a></li>
-                <li><a href="#" className="text-[#6b7280] text-[14px] font-medium hover:text-primary transition-colors">How to - Blog</a></li>
-                <li><a href="#" className="text-[#6b7280] text-[14px] font-medium hover:text-primary transition-colors">Youtube Playlist</a></li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-[#6b7280] text-[14px] font-medium hover:text-primary transition-colors"
+                  >
+                    Free eBooks
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-[#6b7280] text-[14px] font-medium hover:text-primary transition-colors"
+                  >
+                    Development Tutorial
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-[#6b7280] text-[14px] font-medium hover:text-primary transition-colors"
+                  >
+                    How to - Blog
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-[#6b7280] text-[14px] font-medium hover:text-primary transition-colors"
+                  >
+                    Youtube Playlist
+                  </a>
+                </li>
               </ul>
             </div>
-
           </div>
         </div>
       </div>
 
       {/* Footer Bottom / Copyright */}
-      <div className="w-full bg-[#18191c] py-[22px] px-6 relative flex flex-col md:flex-row items-center justify-center">
-        {/* N Logo on left */}
-        <div className="md:absolute md:left-[5vw] flex items-center justify-center w-[28px] h-[28px] rounded-full bg-black mb-4 md:mb-0 border border-white/5">
-          <span className="text-white font-bold text-[12px]">N</span>
-        </div>
-        
+      <div className="w-full bg-[#230B41] py-[22px] px-6 relative flex flex-col md:flex-row items-center justify-center">
         <p className="text-[#a1a1aa] text-[12.5px] font-bold">
           Copyright &copy; 2026. All Rights Reserved.
         </p>

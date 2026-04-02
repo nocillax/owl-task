@@ -1,19 +1,25 @@
-import React from 'react';
+import React from "react";
 
 interface ServiceCardProps {
   title: string;
   desc: string;
+  imageSrc: string;
   imageAlt: string;
 }
 
-export function ServiceCard({ title, desc, imageAlt }: ServiceCardProps) {
+export function ServiceCard({
+  title,
+  desc,
+  imageSrc,
+  imageAlt,
+}: ServiceCardProps) {
   return (
     <article className="bg-white border border-primary/20 rounded-2xl p-8 lg:p-10 flex flex-col items-start transition-all duration-300 hover:border-transparent hover:shadow-[0_0_50px_rgba(0,0,0,0.06)]">
       <div className="w-16 h-16 xl:w-[72px] xl:h-[72px] mb-6 shrink-0">
-        <img 
-          src={`https://placehold.co/150x150/f4f4f4/888888?text=${imageAlt.replace(' ', '+')}`} 
-          alt={imageAlt} 
-          className="w-full h-full object-contain" 
+        <img
+          src={imageSrc}
+          alt={imageAlt}
+          className="w-full h-full object-contain"
         />
       </div>
       <h3 className="text-[22px] font-bold text-[#1f1f1f] mb-4 leading-[1.3] pr-4 tracking-tight">
