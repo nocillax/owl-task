@@ -42,21 +42,19 @@ const SERVICES = [
 
 export default function Services() {
   return (
-    <section id="services" className="px-6 py-24 bg-white w-full">
+    <section id="services" className="px-6 py-14 bg-white w-full">
       <div className="max-w-6xl mx-auto flex flex-col items-center">
-        <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-center text-[#0f0f0f] tracking-tight">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center text-main tracking-tight">
           Our <span className="text-primary">Service</span>
         </h2>
-        <p className="text-[#3a3a3a] max-w-4xl text-center mb-16 text-base font-medium leading-relaxed">
+        <p className="text-main max-w-3xl text-center mb-14 text-sm font-medium">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore
-          <br className="hidden md:block" /> magna aliqua. Ut enim ad minim
-          veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-          ea commodo
-          <br className="hidden md:block" /> consequat.
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 w-full">
           {SERVICES.map((service, idx) => (
             <ServiceCard
               key={idx}

@@ -11,8 +11,8 @@ export interface Review {
 
 export function ReviewCard({ review }: { review: Review }) {
   return (
-    <article className="flex items-center gap-6 p-8 md:p-10 rounded-[1.25rem] w-96 md:w-[30rem] shrink-0 cursor-pointer transition-all duration-300 bg-[#f8f9fa] hover:bg-white hover:shadow-[0_15px_40px_rgba(0,0,0,0.06)] group">
-      <div className="w-20 h-20 shrink-0 rounded-full overflow-hidden opacity-90 group-hover:opacity-100 transition-opacity">
+    <article className="flex items-center gap-6 p-8 md:p-10 rounded-[1.25rem] w-96 md:w-130 shrink-0 cursor-pointer transition-all duration-300 bg-[#F6F6F6] hover:bg-white hover: group">
+      <div className="w-25 h-25 shrink-0 rounded-full overflow-hidden ">
         <img
           src={review.imageSrc}
           alt={review.imageAlt}
@@ -20,20 +20,20 @@ export function ReviewCard({ review }: { review: Review }) {
         />
       </div>
       <div className="flex flex-col items-start">
-        <h3 className="text-[#1f1f1f] text-lg font-bold mb-1.5 tracking-tight">
+        <h3 className="text-text-main text-xl font-bold mb-1.25 tracking-tight">
           {review.name}
         </h3>
-        <p className="text-[#4a4a4a] text-sm font-medium leading-relaxed mb-4 pr-2">
+        <p className="text-text-main text-sm font-medium mb-3 pr-2 tracking-tight leading-tight">
           {review.text}
         </p>
-        <div className="flex items-center gap-[3px] text-[#FBBF24]">
+        <div className="flex items-center gap-0.75 text-[#FF9D00]">
           {[...Array(5)].map((_, i) => (
             <Star
               key={i}
               size={13}
               fill={i < review.stars ? "currentColor" : "transparent"}
               strokeWidth={i < review.stars ? 0 : 2}
-              className={i < review.stars ? "" : "text-[#cbd5e1]"}
+              className={i < review.stars ? "" : "text-[#FF9D00]"}
             />
           ))}
         </div>

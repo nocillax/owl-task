@@ -2,14 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 
-const NAV_LINKS = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "Blog", href: "#tools" },
-  { label: "Resources", href: "#faq" },
-];
 const TRUSTED_LOGOS = [
   { name: "Airbnb", src: "/logos/airbnb-logo2.png" },
   { name: "Booking", src: "/logos/booking.com-logo2.png" },
@@ -21,35 +13,8 @@ const TRUSTED_LOGOS = [
 ];
 
 export default function HomeSection() {
-  const [activeLink, setActiveLink] = useState("Home");
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = NAV_LINKS.map((link) => link.href.substring(1));
-      let current = "";
-      for (const section of sections) {
-        if (!section || section.includes("/")) continue;
-        const el = document.getElementById(section);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          if (rect.top <= 120) {
-            current = section;
-          }
-        }
-      }
-      if (current) {
-        const match = NAV_LINKS.find((l) => l.href === `#${current}`);
-        if (match && match.label !== activeLink) setActiveLink(match.label);
-      } else if (window.scrollY < 100) {
-        setActiveLink("Home");
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [activeLink]);
-
   return (
-    <div id="home" className="relative w-full bg-primary/5">
+    <div id="home" className="relative w-full">
       {/* Background and Blurs */}
       <div
         className="absolute inset-0 z-0 opacity-10 pointer-events-none"
@@ -63,46 +28,13 @@ export default function HomeSection() {
         }}
       />
       <div className="absolute top-10 left-1/2 -translate-x-1/2 z-0 pointer-events-none">
-        <div className="w-screen h-96 md:w-[64rem] bg-background blur-[100px] md:blur-[120px] rounded-full" />
+        <div className="w-screen h-96 md:w-6xl bg-background blur-[100px] md:blur-[120px] rounded-full" />
       </div>
 
-      {/* --- HEADER --- */}
-      <header className="fixed top-0 left-0 w-full z-50 bg-white border-b border-black/5 shadow-sm">
-        <div className="flex items-center justify-between px-6 py-4 md:px-12 w-full max-w-screen-xl mx-auto">
-          <div className="w-24 md:w-32 h-8 shrink-0">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
-              alt="Google Logo"
-              className="w-full h-full object-contain"
-            />
-          </div>
-
-          <nav className="hidden lg:flex items-center gap-8 pl-10">
-            {NAV_LINKS.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={() => setActiveLink(link.label)}
-                className={`text-base font-bold transition-colors pb-1 ${activeLink === link.label
-                  ? "text-primary border-b-[3px] border-primary"
-                  : "text-foreground/80 hover:text-primary"
-                  }`}
-              >
-                {link.label}
-              </a>
-            ))}
-          </nav>
-
-          <button className="flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded font-bold text-sm tracking-wide hover:opacity-90 transition-opacity shadow-sm">
-            Schedule A Meeting &rarr;
-          </button>
-        </div>
-      </header>
-
       {/* --- HERO --- */}
-      <section className="relative w-full overflow-hidden flex flex-col items-center justify-center text-center px-6 pt-36 md:pt-48 pb-20 md:pb-32 z-10 min-h-[500px]">
+      <section className="relative w-full overflow-hidden flex flex-col items-center justify-center text-center px-6 pt-36 md:pt-48 pb-20 md:pb-32 z-10 min-h-125">
         {/* Floating Elements (Responsive placement & sizing) */}
-        <div className="absolute inset-0 z-0 pointer-events-none w-full max-w-screen-xl mx-auto overflow-hidden hidden sm:block">
+        <div className="absolute inset-0 z-0 pointer-events-none w-full max-w-7xl mx-auto overflow-hidden hidden sm:block">
           {/* Top Left (Airbnb) */}
           <div className="absolute top-[10%] md:top-[12%] lg:top-[18%] left-[5%] md:left-[10%] lg:left-[15%] w-16 h-16 md:w-20 md:h-20 lg:w-28 lg:h-28 rounded-2xl lg:rounded-3xl overflow-hidden ">
             <img
@@ -151,26 +83,26 @@ export default function HomeSection() {
 
         {/* Hero Content */}
         <div className="relative z-10 w-full max-w-4xl flex flex-col items-center">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl text-[#0f0f0f] font-extrabold tracking-tight leading-tight mb-4 md:mb-6">
-            Airbnb Assistants For <br /> <span className="font-medium text-2xl sm:text-3xl lg:text-4xl">Property Management</span>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl text-main font-bold tracking-tight leading-tight mb-4 md:mb-6">
+            Airbnb Assistants For <br />{" "}
+            <span className="font-medium text-2xl sm:text-3xl lg:text-4xl">
+              Property Management
+            </span>
           </h1>
-          <p className="text-[#3a3a3a] text-sm sm:text-base max-w-2xl mb-6 md:mb-8 font-medium leading-relaxed px-4 md:px-0">
+          <p className="text-main text-sm sm:text-base max-w-3xl mb-6 md:mb-8 font-medium px-4 md:px-0">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore
-            <br className="hidden md:block" />
-            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut
-            <br className="hidden md:block" />
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
             aliquip ex ea commodo consequat.
           </p>
 
           <div className="flex flex-col items-center gap-5 mt-2 md:mt-4">
-            <button className="flex items-center justify-center gap-2 bg-primary text-primary-foreground px-7 py-3 rounded font-bold text-base hover:opacity-90 transition-opacity shadow-sm">
+            <button className="flex items-center justify-center gap-2 bg-primary text-primary-foreground px-5.5 py-4.5 rounded font-bold text-sm hover:opacity-90 transition-opacity shadow-sm">
               Schedule A Meeting &rarr;
             </button>
             <a
               href="#pricing"
-              className="text-[#0f0f0f] text-base font-bold underline underline-offset-[5px] decoration-2 hover:text-primary transition-colors"
+              className="text-main text-base font-medium underline hover:text-primary transition-colors"
             >
               See Pricing
             </a>
@@ -179,24 +111,24 @@ export default function HomeSection() {
       </section>
 
       {/* --- TRUSTED BY --- */}
-      <section className="flex flex-col w-full relative z-10 hidden md:block mt-auto pb-4">
+      <section className="flex flex-col w-full relative z-10 md:block mt-auto">
         <div className="w-full py-6 md:py-8 flex items-center justify-center">
-          <p className="text-base md:text-lg font-bold text-[#1f1f1f]">
+          <p className="text-xl font-bold text-main">
             Trusted by leaders in 50+ industries
           </p>
         </div>
         <div className="w-full bg-black/5 py-6 md:py-8 px-6">
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-10 lg:gap-20 w-full max-w-7xl mx-auto">
+          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10 lg:gap-15 w-full max-w-7xl mx-auto">
             {TRUSTED_LOGOS.map((logo) => (
               <div
                 key={logo.name}
-                className="h-6 md:h-8 lg:h-10 shrink-0 flex items-center justify-center"
+                className="h-4 md:h-6 lg:h-8 shrink-0 flex items-center justify-center"
               >
                 {" "}
                 <img
                   src={logo.src}
                   alt={logo.name}
-                  className="h-full object-contain mix-blend-multiply opacity-80 hover:opacity-100 transition-opacity cursor-pointer"
+                  className="h-full object-contain"
                 />{" "}
               </div>
             ))}

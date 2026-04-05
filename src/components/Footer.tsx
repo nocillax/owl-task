@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="w-full flex flex-col bg-white">
       {/* "Pre-Footer" / "Still have Questions?" Block Merged directly inline */}
       <div className="w-full flex flex-col items-center px-6 pb-24 border-b border-white">
-        <div className="w-full max-w-5xl bg-[#F5F8FA] rounded-[2rem] p-12 md:p-14 flex flex-col items-center text-center">
+        <div className="w-full max-w-5xl bg-[#F9FAFB] rounded-[2rem] p-12 md:p-14 flex flex-col items-center text-center">
           {/* Avatars */}
           <div className="flex items-center justify-center -space-x-3 mb-6">
             <div className="w-12 h-12 rounded-full border-[3px] border-[#F5F8FA] overflow-hidden z-20 shadow-sm relative">
@@ -138,9 +138,7 @@ export default function Footer() {
 
             {/* Links - Help */}
             <div className="flex flex-col">
-              <h4 className="text-[#1f1f1f] font-bold text-base mb-8">
-                Help
-              </h4>
+              <h4 className="text-[#1f1f1f] font-bold text-base mb-8">Help</h4>
               <ul className="flex flex-col gap-5">
                 <li>
                   <a

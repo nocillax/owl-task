@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
+import { DM_Sans, Manrope } from "next/font/google";
 import "./globals.css";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
+  subsets: ["latin"],
+});
+
+const manrope = Manrope({
+  variable: "--font-manrope-custom",
   subsets: ["latin"],
 });
 
@@ -20,7 +25,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${dmSans.variable} h-full antialiased scroll-smooth scroll-pt-[90px]`}
+      className={`${dmSans.variable} ${manrope.variable} h-full antialiased scroll-smooth scroll-pt-[90px]`}
       suppressHydrationWarning
     >
       <body>{children}</body>

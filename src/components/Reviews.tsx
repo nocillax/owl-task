@@ -73,19 +73,16 @@ export default function Reviews() {
   }, []);
 
   return (
-    <section className="py-24 bg-white w-full overflow-hidden">
+    <section className="py-18 bg-white w-full overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col items-center px-6">
-        <h2 className="text-3xl md:text-4xl font-extrabold mb-6 text-center text-[#1f1f1f] tracking-tight">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center text-text-main tracking-tight">
           Check Our Clients <span className="text-primary">Review</span>
         </h2>
-        <p className="text-[#3a3a3a] max-w-4xl text-center mb-16 text-sm font-medium leading-relaxed">
+        <p className="text-main max-w-3xl text-center mb-15 text-sm font-medium">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et
-          <br className="hidden lg:block" />
-          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-          exercitation ullamco laboris nisi ut aliquip ex ea
-          <br className="hidden lg:block" />
-          commodo consequat.
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
         </p>
       </div>
 
@@ -102,7 +99,7 @@ export default function Reviews() {
 
         <div
           ref={scrollRef}
-          className="flex overflow-x-auto gap-6 px-6 snap-x snap-mandatory hide-scroll py-10 items-center"
+          className="flex overflow-x-auto gap-6 px-6 snap-x snap-mandatory hide-scroll pyb-10 items-center"
         >
           {REVIEWS.map((review, idx) => (
             <div key={idx} className="snap-center">

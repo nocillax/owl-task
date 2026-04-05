@@ -2,20 +2,21 @@
 
 @theme {
   --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-manrope: var(--font-manrope-custom), sans-serif;
 
-  --color-background: #ffffff;
-  --color-foreground: #191d23;
+  /* Core Figma Bg Colors */
+  --color-background: #ffffff; /* Main Background */
+  --color-background-secondary: #f6f6f6; /* Grayish background */
+  --color-background-blueish: #f9fafb; /* Blueish Background */
 
-  --color-primary: #ed3c6a;
+  /* Text Colors */
+  --color-text-main: #000000; /* Pure Black text */
+  --color-text-white: #ffffff; /* Pure White text */
+  --color-text-thin: #606060; /* Thin text */
+  --color-text-muted: #a0abbb; /* Crossed out / muted pricing */
+  --color-foreground: #000000; /* Defaults text implicitly to black */
+
+  /* Accent Colors */
+  --color-primary: #ed3c6a; /* Main Pink/Red */
   --color-primary-foreground: #ffffff;
-  --color-primary-light: #fdebf0;
-
-  --color-secondary: #f6f6f6;
-  --color-secondary-foreground: #191d23;
-
-  --color-muted: #f9fafb;
-  --color-muted-foreground: #64748b;
-
-  --color-border: #fac5d2;
-  --color-border-muted: #d6d6d6;
 }

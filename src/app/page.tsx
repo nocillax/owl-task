@@ -1,4 +1,5 @@
 import React from "react";
+import Navbar from "@/components/Navbar";
 import HomeSection from "@/components/HomeSection";
 import Services from "@/components/Services";
 import Pricing from "@/components/Pricing";
@@ -14,6 +15,7 @@ export default function LandingPage() {
     <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
 
       {/* TOP SECTION */}
+      <Navbar />
       <HomeSection />
       <Services />
       <Pricing />
