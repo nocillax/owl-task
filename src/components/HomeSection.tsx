@@ -17,18 +17,23 @@ export default function HomeSection() {
     <div id="home" className="relative w-full">
       {/* Background and Blurs */}
       <div
-        className="absolute inset-0 z-0 opacity-10 pointer-events-none"
+        // [ADJUST GRID HEIGHT] Adjust the 'h-[85%]' below to control exactly how far down the page the grid extends!
+        className="absolute top-0 left-0 w-full h-[73.5%] z-0 opacity-10 pointer-events-none"
         style={{
           backgroundImage: `
             linear-gradient(to right, #000 1px, transparent 1px),
             linear-gradient(to bottom, #000 1px, transparent 1px)
           `,
-          backgroundSize: "95px 95px",
+          backgroundSize: "80px 80px",
           backgroundPosition: "center top",
         }}
       />
-      <div className="absolute top-10 left-1/2 -translate-x-1/2 z-0 pointer-events-none">
-        <div className="w-screen h-96 md:w-6xl bg-background blur-[100px] md:blur-[120px] rounded-full" />
+      {/* [ADJUST BLUR RADIUS] 
+           1. Change 'blur-[120px]' to 'blur-[150px]' or higher to spread the blur further.
+           2. Change 'w-full' and 'h-[400px]' to make the actual glowing ellipse physically larger.
+        */}
+      <div className="absolute top-10 left-1/2 -translate-x-1/2 z-0 pointer-events-none flex justify-center w-full">
+        <div className="w-[120%] md:w-6xl h-[700px] bg-white blur-[120px] md:blur-[140px] rounded-full" />
       </div>
 
       {/* --- HERO --- */}
@@ -72,13 +77,13 @@ export default function HomeSection() {
           </div>
 
           {/* Small floating dots with responsive adjustments mapped natively */}
-          <div className="absolute top-[28%] left-[4%] lg:left-[8%] w-2 h-2 lg:w-3 lg:h-3 rounded-full bg-[#5C45B3] shadow-md" />
-          <div className="absolute top-[50%] lg:top-[58%] left-[10%] lg:left-[15%] w-3 h-3 lg:w-4 lg:h-4 rounded-full bg-[#B24A4B] shadow-md" />
-          <div className="absolute top-[75%] lg:bottom-[28%] lg:top-auto left-[6%] lg:left-[10%] w-1 h-1 lg:w-1.5 lg:h-1.5 rounded-full bg-[#A8A344] shadow-md" />
-          <div className="absolute top-[15%] lg:top-[20%] right-[30%] lg:right-[50%] w-2 h-2 lg:w-3 lg:h-3 rounded-full bg-[#6EB88F] shadow-md" />
-          <div className="absolute top-[80%] lg:bottom-[20%] lg:top-auto right-[35%] lg:right-[48%] w-2 h-2 lg:w-3 lg:h-3 rounded-full bg-[#75B2D0] shadow-md opacity-80" />
-          <div className="absolute top-[35%] lg:top-[40%] right-[10%] lg:right-[15%] w-1.5 h-1.5 lg:w-2 lg:h-2 rounded-full bg-[#B6AC58] shadow-md" />
-          <div className="absolute top-[70%] lg:bottom-[35%] lg:top-auto right-[5%] lg:right-[10%] w-1 h-1 lg:w-1.5 lg:h-1.5 rounded-full bg-[#18234D] shadow-md" />
+          <div className="absolute top-[28%] left-[4%] lg:left-[8%] w-2 h-2 lg:w-3 lg:h-3 rounded-full bg-[#635BFF] shadow-md" />
+          <div className="absolute top-[50%] lg:top-[58%] left-[10%] lg:left-[15%] w-3 h-3 lg:w-4 lg:h-4 rounded-full bg-[#FF5A5F] shadow-md" />
+          <div className="absolute top-[75%] lg:bottom-[28%] lg:top-auto left-[6%] lg:left-[10%] w-1.5 h-1.5 lg:w-2 lg:h-2 rounded-full bg-[#cec054] shadow-md" />
+          <div className="absolute top-[15%] lg:top-[20%] right-[30%] lg:right-[50%] w-2 h-2 lg:w-3 lg:h-3 rounded-full bg-[#34E0A1] shadow-md" />
+          <div className="absolute top-[80%] lg:bottom-[10%] lg:top-auto right-[35%] lg:right-[48%] w-2 h-2 lg:w-3 lg:h-3 rounded-full bg-[#61d2d6] shadow-md opacity-80" />
+          <div className="absolute top-[35%] lg:top-[40%] right-[10%] lg:right-[15%] w-1.5 h-1.5 lg:w-2 lg:h-2 rounded-full bg-[#cec054] shadow-md" />
+          <div className="absolute top-[70%] lg:bottom-[35%] lg:top-auto right-[5%] lg:right-[10%] w-1.5 h-1.5 lg:w-2 lg:h-2 rounded-full bg-[#0C3B7C] shadow-md" />
         </div>
 
         {/* Hero Content */}
@@ -117,7 +122,7 @@ export default function HomeSection() {
             Trusted by leaders in 50+ industries
           </p>
         </div>
-        <div className="w-full bg-black/5 py-6 md:py-8 px-6">
+        <div className="w-full bg-[#F6F6F6] py-4 md:py-5 px-6">
           <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10 lg:gap-15 w-full max-w-7xl mx-auto">
             {TRUSTED_LOGOS.map((logo) => (
               <div

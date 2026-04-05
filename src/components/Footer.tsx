@@ -6,16 +6,16 @@ export default function Footer() {
     <footer className="w-full flex flex-col bg-white">
       {/* Main Footer Links & Company Section */}
       <div className="w-full flex-col border-t border-gray-200">
-        <div className="max-w-6xl mx-auto w-full py-20">
+        <div className="max-w-6xl mx-auto w-full pt-20 pb-14">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.85fr_1fr_1fr_1fr] gap-12 lg:gap-8">
             {/* Logo & Description */}
             <div className="flex flex-col items-start pr-0 lg:pr-8">
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
                 alt="Google Logo"
-                className="h-7 mb-8 object-contain"
+                className="h-9.5 mb-8 object-contain"
               />
-              <p className="text-[#52525B] text-sm font-regular mb-9">
+              <p className="text-[#52525B] text-sm font-regular mb-9 leading-tight">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
                 dictum aliquet accumsan porta lectus ridiculus in mattis. Netus
                 sodales in volutpat ullamcorper amet adipiscing fermentum.

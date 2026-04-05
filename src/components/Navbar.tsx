@@ -40,9 +40,9 @@ export default function Navbar() {
   }, [activeLink]);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-white border-b border-black/5 shadow-sm">
+    <header className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-primary/10 shadow-[0_15px_40px_-15px_rgba(250,196,210,0.63)]">
       <div className="flex items-center justify-between px-6 py-4 md:px-12 w-full max-w-7xl mx-auto">
-        <div className="w-24 md:w-32 h-8 shrink-0">
+        <div className="w-24 md:w-32 h-11 shrink-0">
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
             alt="Google Logo"
@@ -56,9 +56,9 @@ export default function Navbar() {
               key={link.label}
               href={link.href}
               onClick={() => setActiveLink(link.label)}
-              className={`text-base font-bold transition-colors pb-1 ${
+              className={`text-base font-regular transition-colors pb-1 ${
                 activeLink === link.label
-                  ? "text-primary border-b-[3px] border-primary"
+                  ? "text-primary border-b-[3px] border-primary font-bold"
                   : "text-foreground/80 hover:text-primary"
               }`}
             >
