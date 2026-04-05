@@ -21,15 +21,15 @@ export default function FAQ() {
   return (
     <section id="faq" className="px-6 py-10 bg-white w-full flex flex-col items-center">
       
-      <div className="w-full max-w-[1000px] bg-[#F5F8FA] rounded-[2rem] p-10 md:p-16 flex flex-col items-center">
-        <h2 className="text-[32px] md:text-[38px] font-extrabold mb-4 text-[#1f1f1f] tracking-tight">
+      <div className="w-full max-w-5xl bg-[#F5F8FA] rounded-[2rem] p-10 md:p-16 flex flex-col items-center">
+        <h2 className="text-3xl md:text-4xl font-extrabold mb-4 text-[#1f1f1f] tracking-tight">
           Frequently asked <span className="text-primary">questions</span>
         </h2>
-        <p className="text-[#3a3a3a] text-[15px] font-medium mb-12 text-center">
+        <p className="text-[#3a3a3a] text-base font-medium mb-12 text-center">
           Everything you need to know about the product and billing.
         </p>
 
-        <div className="w-full flex flex-col max-w-[750px] mx-auto">
+        <div className="w-full flex flex-col max-w-3xl mx-auto">
           {FAQ_DATA.map((item, idx) => {
             const isOpen = openIndex === idx;
             return (
@@ -41,7 +41,7 @@ export default function FAQ() {
                   onClick={() => setOpenIndex(isOpen ? null : idx)}
                   className="flex items-center justify-between w-full text-left"
                 >
-                  <span className="font-bold text-[15px] text-[#1f1f1f]">{item.q}</span>
+                  <span className="font-bold text-base text-[#1f1f1f]">{item.q}</span>
                   {isOpen ? (
                     <MinusCircle className="text-primary shrink-0 ml-4" size={20} strokeWidth={1.5} />
                   ) : (
@@ -49,7 +49,7 @@ export default function FAQ() {
                   )}
                 </button>
                 {isOpen && (
-                  <p className="text-[#888888] text-[13px] font-medium leading-[1.6] pt-3 pr-10">
+                  <p className="text-[#888888] text-sm font-medium leading-relaxed pt-3 pr-10">
                     {item.a}
                   </p>
                 )}

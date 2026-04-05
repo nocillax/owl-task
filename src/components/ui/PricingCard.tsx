@@ -29,20 +29,20 @@ export function PricingCard({ plan, isYearly, isSelected, onSelect }: PricingCar
           : 'bg-white text-[#1f1f1f] border-primary/20 hover:border-primary/40 shadow-sm z-0'
       }`}
     >
-      <h3 className="text-[20px] font-bold mb-3">{plan.name}</h3>
-      <p className={`text-[13px] leading-[1.6] mb-8 pr-4 font-medium min-h-[44px] ${isSelected ? 'text-white/90' : 'text-[#888888]'}`}>
+      <h3 className="text-xl font-bold mb-3">{plan.name}</h3>
+      <p className={`text-sm leading-relaxed mb-8 pr-4 font-medium min-h-11 ${isSelected ? 'text-white/90' : 'text-[#888888]'}`}>
         {plan.category}
       </p>
 
       <div className="flex items-center gap-1.5 mb-6">
-        <span className="text-[54px] leading-none font-bold tracking-tight">${price}</span>
-        <span className={`text-[13px] font-medium pt-1 ${isSelected ? 'text-white/80' : 'text-[#888888]'}`}>
+        <span className="text-6xl leading-none font-bold tracking-tight">${price}</span>
+        <span className={`text-sm font-medium pt-1 ${isSelected ? 'text-white/80' : 'text-[#888888]'}`}>
           / Month
         </span>
       </div>
 
       <button 
-        className={`w-full py-3 rounded-[4px] font-bold text-[14px] mb-10 transition-colors border ${
+        className={`w-full py-3 rounded font-bold text-sm mb-10 transition-colors border ${
           isSelected 
             ? 'bg-white text-primary border-transparent hover:bg-white/90 shadow-sm' 
             : 'bg-transparent text-primary border-primary hover:bg-primary/5'
@@ -56,7 +56,7 @@ export function PricingCard({ plan, isYearly, isSelected, onSelect }: PricingCar
           <li key={i} className="flex items-center gap-4">
             <FeatureIcon type={feature.included ? 'tick' : 'cross'} cardSelected={isSelected} />
             <span 
-              className={`text-[13px] leading-[1.2] font-medium ${
+              className={`text-sm leading-tight font-medium ${
                 isSelected 
                   ? 'text-white' 
                   : feature.included ? 'text-[#333333]' : 'text-[#a1a1aa]'

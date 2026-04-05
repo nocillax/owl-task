@@ -63,36 +63,36 @@ export default function Pricing() {
 
   return (
     <section id="pricing" className="px-6 py-24 bg-white w-full">
-      <div className="max-w-[1050px] mx-auto flex flex-col items-center">
+      <div className="max-w-6xl mx-auto flex flex-col items-center">
         {/* Headings */}
         <div className="flex flex-col items-center mb-8 text-center text-[#1f1f1f]">
-          <h2 className="text-[32px] md:text-[36px] font-extrabold mb-4 tracking-[-0.02em]">
+          <h2 className="text-3xl md:text-4xl font-extrabold mb-4 tracking-tight">
             Airnbn Assistent <span className="text-primary">pricing</span>
           </h2>
-          <p className="text-[#333333] text-[15px] font-medium">
+          <p className="text-[#333333] text-base font-medium">
             Choose a plan that's right for you
           </p>
         </div>
 
         {/* Toggle Controls */}
         <div className="flex justify-center items-center gap-4 mb-20 relative">
-          <span className={`text-[13px] font-semibold transition-colors ${!isYearly ? 'text-[#1f1f1f]' : 'text-[#888888]'}`}>
+          <span className={`text-sm font-semibold transition-colors ${!isYearly ? 'text-[#1f1f1f]' : 'text-[#888888]'}`}>
             Pay Monthly
           </span>
           <button 
             onClick={() => setIsYearly(!isYearly)}
-            className={`w-[44px] h-[24px] rounded-full relative flex items-center px-[3px] transition-colors ${isYearly ? 'bg-primary' : 'bg-[#cbd5e1]'}`}
+            className={`w-11 h-6 rounded-full relative flex items-center px-1 transition-colors ${isYearly ? 'bg-primary' : 'bg-[#cbd5e1]'}`}
           >
-            <div className={`w-[18px] h-[18px] bg-white rounded-full transition-transform shadow-sm ${isYearly ? 'translate-x-[20px]' : 'translate-x-0'}`} />
+            <div className={`w-4 h-4 bg-white rounded-full transition-transform shadow-sm ${isYearly ? 'translate-x-5' : 'translate-x-0'}`} />
           </button>
-          <span className={`text-[13px] font-semibold transition-colors ${isYearly ? 'text-[#1f1f1f]' : 'text-[#888888]'}`}>
+          <span className={`text-sm font-semibold transition-colors ${isYearly ? 'text-[#1f1f1f]' : 'text-[#888888]'}`}>
             Pay Yearly
           </span>
 
           {/* Hand-drawn arrow and save text */}
-          <div className="absolute left-[calc(50%+80px)] md:left-[calc(50%+100px)] top-[50%] -translate-y-1/2 flex items-center z-0">
-             <img src="https://placehold.co/60x30/transparent/e33b65?text=~>" className="w-[50px] object-contain opacity-90 rotate-[-10deg]" alt="Arrow pointing to pay yearly" />
-             <span className="text-primary font-[800] text-[14px] ml-1 absolute left-[85%] whitespace-nowrap">Save 25%</span>
+          <div className="absolute left-1/2 ml-20 md:ml-28 top-1/2 -translate-y-1/2 flex items-center z-0">
+             <img src="https://placehold.co/60x30/transparent/e33b65?text=~>" className="w-12 object-contain opacity-90 -rotate-12" alt="Arrow pointing to pay yearly" />
+             <span className="text-primary font-extrabold text-sm ml-1 absolute left-[85%] whitespace-nowrap">Save 25%</span>
           </div>
         </div>
 

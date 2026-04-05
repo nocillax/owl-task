@@ -43,11 +43,11 @@ const SERVICES = [
 export default function Services() {
   return (
     <section id="services" className="px-6 py-24 bg-white w-full">
-      <div className="max-w-[1150px] mx-auto flex flex-col items-center">
-        <h2 className="text-[36px] md:text-[40px] font-extrabold mb-6 text-center text-[#0f0f0f] tracking-tight">
+      <div className="max-w-6xl mx-auto flex flex-col items-center">
+        <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-center text-[#0f0f0f] tracking-tight">
           Our <span className="text-primary">Service</span>
         </h2>
-        <p className="text-[#3a3a3a] max-w-[820px] text-center mb-16 text-[15px] font-medium leading-[1.6]">
+        <p className="text-[#3a3a3a] max-w-4xl text-center mb-16 text-base font-medium leading-relaxed">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore
           <br className="hidden md:block" /> magna aliqua. Ut enim ad minim

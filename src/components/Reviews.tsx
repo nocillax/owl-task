@@ -74,11 +74,11 @@ export default function Reviews() {
 
   return (
     <section className="py-24 bg-white w-full overflow-hidden">
-      <div className="max-w-[1200px] mx-auto flex flex-col items-center px-6">
-        <h2 className="text-[32px] md:text-[38px] font-extrabold mb-6 text-center text-[#1f1f1f] tracking-tight">
+      <div className="max-w-7xl mx-auto flex flex-col items-center px-6">
+        <h2 className="text-3xl md:text-4xl font-extrabold mb-6 text-center text-[#1f1f1f] tracking-tight">
           Check Our Clients <span className="text-primary">Review</span>
         </h2>
-        <p className="text-[#3a3a3a] max-w-[850px] text-center mb-16 text-[14px] font-medium leading-[1.7]">
+        <p className="text-[#3a3a3a] max-w-4xl text-center mb-16 text-sm font-medium leading-relaxed">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et
           <br className="hidden lg:block" />
@@ -89,7 +89,7 @@ export default function Reviews() {
         </p>
       </div>
 
-      <div className="w-full max-w-[1200px] mx-auto relative pb-10">
+      <div className="w-full max-w-7xl mx-auto relative pb-10">
         {/* Horizontal Scrolling Carousel specific CSS hidden scrollbars */}
         <style
           dangerouslySetInnerHTML={{

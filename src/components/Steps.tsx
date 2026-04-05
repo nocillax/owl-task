@@ -21,11 +21,11 @@ const STEPS = [
 export default function Steps() {
   return (
     <section className="px-6 py-24 bg-white w-full">
-      <div className="max-w-[950px] mx-auto flex flex-col items-center">
-        <h2 className="text-[32px] md:text-[36px] font-extrabold mb-6 text-[#1f1f1f] tracking-tight">
+      <div className="max-w-5xl mx-auto flex flex-col items-center">
+        <h2 className="text-3xl md:text-4xl font-extrabold mb-6 text-[#1f1f1f] tracking-tight">
           Getting Started is <span className="text-primary">Easy</span>
         </h2>
-        <p className="text-[#3a3a3a] text-center max-w-[720px] mb-24 text-[13px] md:text-[14px] font-medium leading-[1.6]">
+        <p className="text-[#3a3a3a] text-center max-w-3xl mb-24 text-sm md:text-base font-medium leading-relaxed">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore
           <br className="hidden md:block" /> magna aliqua. Ut enim ad minim
@@ -40,11 +40,11 @@ export default function Steps() {
               {/* Card with overlapping badge */}
               <div className="relative w-full aspect-[4/3] bg-white border border-primary/20 rounded-[1.25rem] flex items-center justify-center mb-8 hover:shadow-[0_10px_30px_rgba(227,59,101,0.08)] transition-all">
                 {/* Badge layout positioned exactly over the top-left border corner */}
-                <div className="absolute -top-[24px] -left-[24px] w-[50px] h-[50px] bg-white border-[2.5px] border-primary text-[#1f1f1f] rounded-full flex items-center justify-center font-bold text-[19px]">
+                <div className="absolute -top-6 -left-6 w-12 h-12 bg-white border-[2.5px] border-primary text-[#1f1f1f] rounded-full flex items-center justify-center font-bold text-xl">
                   {step.num}
                 </div>
                 {/* Icon Placeholder */}
-                <div className="w-[80px] h-[80px]">
+                <div className="w-20 h-20">
                   <img
                     src={step.img}
                     alt={`Step ${step.num} Icon`}
@@ -53,7 +53,7 @@ export default function Steps() {
                 </div>
               </div>
 
-              <h3 className="text-[15px] font-bold text-center text-[#1f1f1f] leading-[1.4] whitespace-pre-line tracking-tight">
+              <h3 className="text-base font-bold text-center text-[#1f1f1f] leading-snug whitespace-pre-line tracking-tight">
                 {step.text}
               </h3>
             </div>
