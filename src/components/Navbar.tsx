@@ -23,12 +23,17 @@ export default function Navbar() {
 
       const sections = NAV_LINKS.map((link) => link.href.substring(1));
       let current = "";
+      let closestTop = -Infinity; // Mathematically track absolute proximity
+
       for (const section of sections) {
         if (!section || section.includes("/")) continue;
         const el = document.getElementById(section);
         if (el) {
           const rect = el.getBoundingClientRect();
-          if (rect.top <= 120) {
+          // Find the section that has crossed the threshold (<= 120) 
+          // AND is physically the closest one to the threshold (largest negative)
+          if (rect.top <= 120 && rect.top > closestTop) {
+            closestTop = rect.top;
             current = section;
           }
         }
