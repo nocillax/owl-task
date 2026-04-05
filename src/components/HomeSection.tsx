@@ -18,7 +18,7 @@ export default function HomeSection() {
       {/* Background and Blurs */}
       <div
         // [ADJUST GRID HEIGHT] Adjust the 'h-[85%]' below to control exactly how far down the page the grid extends!
-        className="absolute top-0 left-0 w-full h-[73.5%] z-0 opacity-10 pointer-events-none"
+        className="absolute top-0 left-0 w-full h-[75.7%] z-0 opacity-10 pointer-events-none"
         style={{
           backgroundImage: `
             linear-gradient(to right, #000 1px, transparent 1px),
@@ -33,7 +33,7 @@ export default function HomeSection() {
            2. Change 'w-full' and 'h-[400px]' to make the actual glowing ellipse physically larger.
         */}
       <div className="absolute top-10 left-1/2 -translate-x-1/2 z-0 pointer-events-none flex justify-center w-full">
-        <div className="w-[120%] md:w-6xl h-[700px] bg-white blur-[120px] md:blur-[140px] rounded-full" />
+        <div className="w-[120%] md:w-6xl h-175 bg-white blur-[120px] md:blur-[140px] rounded-full" />
       </div>
 
       {/* --- HERO --- */}

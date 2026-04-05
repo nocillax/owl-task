@@ -52,7 +52,7 @@ export default function WhyChooseUs() {
           </div>
 
           {/* Right Image Block (Center on Mobile, Right on Desktop) */}
-          <div className="order-2 lg:order-0 flex-1 w-full flex items-center justify-center lg:justify-end py-10 lg:py-12 lg:pr-12 pointer-events-none z-0">
+          <div className="order-2 lg:order-0 flex-1 w-full flex items-center justify-center lg:justify-end pt-10 lg:py-12 lg:pr-12 pointer-events-none z-0">
             <div className="relative w-[90%] max-w-100 lg:max-w-none lg:w-[125%] shrink-0">
               <img
                 src="/logos/why-choose-us.png"

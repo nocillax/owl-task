@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="w-full flex flex-col bg-white">
       {/* Main Footer Links & Company Section */}
       <div className="w-full flex-col border-t border-gray-200">
-        <div className="max-w-6xl mx-auto w-full pt-20 pb-14">
+        <div className="max-w-6xl mx-auto w-full px-6 lg:px-0 pt-20 pb-14">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.85fr_1fr_1fr_1fr] gap-12 lg:gap-8">
             {/* Logo & Description */}
             <div className="flex flex-col items-start pr-0 lg:pr-8">

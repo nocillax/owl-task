@@ -13,9 +13,14 @@ const NAV_LINKS = [
 
 export default function Navbar() {
   const [activeLink, setActiveLink] = useState("Home");
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const isClickScrollingRef = React.useRef(false);
 
   useEffect(() => {
     const handleScroll = () => {
+      // Don't auto-update active tab if we are currently mid-scroll from a manual click!
+      if (isClickScrollingRef.current) return;
+
       const sections = NAV_LINKS.map((link) => link.href.substring(1));
       let current = "";
       for (const section of sections) {
@@ -55,7 +60,13 @@ export default function Navbar() {
             <a
               key={link.label}
               href={link.href}
-              onClick={() => setActiveLink(link.label)}
+              onClick={() => {
+                setActiveLink(link.label);
+                isClickScrollingRef.current = true;
+                setTimeout(() => {
+                  isClickScrollingRef.current = false;
+                }, 1000); // lock scroll-spy for 1s while smooth scrolling completes
+              }}
               className={`text-base font-regular transition-colors pb-1 ${
                 activeLink === link.label
                   ? "text-primary border-b-[3px] border-primary font-bold"
@@ -67,10 +78,59 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <button className="flex items-center justify-center gap-2 bg-primary text-primary-foreground px-5.5 py-4.5 rounded font-bold text-sm hover:opacity-90 transition-opacity shadow-sm">
+        <button className="hidden lg:flex items-center justify-center gap-2 bg-primary text-primary-foreground px-5.5 py-4.5 rounded font-bold text-sm hover:opacity-90 transition-opacity shadow-sm">
           Schedule A Meeting &rarr;
         </button>
+
+        {/* Mobile Menu Toggle Button */}
+        <button
+          className="lg:hidden p-2 text-[#101828] focus:outline-none"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          {isMobileMenuOpen ? (
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          ) : (
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          )}
+        </button>
       </div>
+
+      {/* Mobile Menu Dropdown Panel */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden absolute top-full left-0 w-full bg-white border-b border-primary/10 shadow-lg flex flex-col items-center py-6 px-6 gap-6 z-50">
+          {NAV_LINKS.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              onClick={() => {
+                setActiveLink(link.label);
+                setIsMobileMenuOpen(false);
+                isClickScrollingRef.current = true;
+                setTimeout(() => {
+                  isClickScrollingRef.current = false;
+                }, 1000);
+              }}
+              className={`text-lg transition-colors pb-1 ${
+                activeLink === link.label
+                  ? "text-primary border-b-[3px] border-primary font-bold"
+                  : "text-foreground/80 font-medium hover:text-primary"
+              }`}
+            >
+              {link.label}
+            </a>
+          ))}
+          <button className="w-full mt-4 flex justify-center items-center gap-2 bg-primary text-primary-foreground px-5.5 py-4.5 rounded font-bold text-base hover:opacity-90 transition-opacity shadow-sm">
+            Schedule A Meeting
+          </button>
+        </div>
+      )}
     </header>
   );
 }
