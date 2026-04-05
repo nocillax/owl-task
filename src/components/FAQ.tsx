@@ -38,7 +38,7 @@ export default function FAQ() {
       id="faq"
       className="px-6 py-10 bg-white w-full flex flex-col items-center"
     >
-      <div className="w-full max-w-5xl bg-[#F9FAFB] rounded-4xl p-10 md:p-16 flex flex-col items-center">
+      <div className="w-full max-w-6xl bg-[#F9FAFB] rounded-2xl p-10 md:p-16 flex flex-col items-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center text-main tracking-tight">
           Frequently asked <span className="text-primary">questions</span>
         </h2>
@@ -84,6 +84,45 @@ export default function FAQ() {
             );
           })}
         </div>
+      </div>
+
+      {/* "Still have Questions?" Block / FAQ Follow-up */}
+      <div className="w-full max-w-6xl bg-[#F9FAFB] rounded-2xl p-6 md:p-8 flex flex-col items-center text-center mt-5 mb-8">
+        {/* Avatars */}
+        <div className="flex items-center justify-center -space-x-3 mb-8">
+          <div className="w-12 h-12 rounded-full border-[3px] border-[#F5F8FA] overflow-hidden z-20 shadow-sm relative">
+            <img
+              src="/logos/prefooter2.png"
+              alt="Team member"
+              className="absolute inset-0 w-full h-full object-cover "
+            />
+          </div>
+          <div className="w-14 h-14 rounded-full border-[3px] border-[#F5F8FA] overflow-hidden z-30 -translate-y-1.5 shadow-sm relative">
+            <img
+              src="/logos/prefooter1.png"
+              alt="Team member"
+              className="absolute inset-0 w-full h-full object-cover "
+            />
+          </div>
+          <div className="w-12 h-12 rounded-full border-[3px] border-[#F5F8FA] overflow-hidden z-20 shadow-sm relative">
+            <img
+              src="/logos/prefooter3.png"
+              alt="Team member"
+              className="absolute inset-0 w-full h-full object-cover "
+            />
+          </div>
+        </div>
+
+        <h2 className="text-xl font-extrabold text-[#101828] mb-2">
+          Still have Questions?
+        </h2>
+        <p className="text-[#888888] text-base font-medium mb-8">
+          Can't find the answer you're looking for? Please chat to our friendly
+          team.
+        </p>
+        <button className="bg-primary text-white font-medium text-base px-4.5 py-2.5 rounded hover:opacity-90 transition-opacity">
+          Get in touch
+        </button>
       </div>
     </section>
   );
